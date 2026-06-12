@@ -61,10 +61,11 @@
         <div class="col-sm-2">
           <label>Drug</label>
           <select id="r-drug" class="form-select form-select-sm">
-            <option value="101">101 Ibuprofen</option>
-            <option value="102">102 Aspirin</option>
-            <option value="103">103 Penicillin</option>
-            <option value="104">104 Paracetamol</option>
+            
+            
+            <option value="105">Metformin</option>
+            <option value="103">Penicillin</option>
+            
           </select>
         </div>
         <div class="col-sm-1"><label>Dosage</label><input id="r-dose" class="form-control form-control-sm" value="8 mg"></div>
@@ -89,7 +90,7 @@
 
 <script>
 const API   = 'http://localhost:3004';
-const DRUGS = {101:'Ibuprofen',102:'Aspirin',103:'Penicillin',104:'Paracetamol'};
+const DRUGS = {103:'Penicillin',105:'Metformin'};
 
 const get  = p => fetch(API+p).then(r=>r.json());
 const post = (p,b=null) => fetch(API+p,{method:'POST',headers:{'Content-Type':'application/json'},...(b?{body:JSON.stringify(b)}:{})}).then(async r=>{if(!r.ok)throw new Error(await r.text());return r.json();});
